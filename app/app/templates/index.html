@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block container %}
+<div class="row">
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Article API</h5>
+                <p class="card-text">http://127.0.0.1:8000/articles</p>
+                <a href="{% url 'articles' %}" class="btn btn-primary">GET</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-6">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Category API</h5>
+                <p class="card-text">http://127.0.0.1:8000/categories</p>
+                <a href="{% url 'categories' %}" class="btn btn-primary">GET</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

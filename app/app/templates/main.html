@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block navbar_title %}
+Administration
+{% endblock %}
+
+{% block container %}
+<table class="table table-hover">
+    <tr>
+        <tbody>
+        <tr class="table-secondary">
+            <td>Article</td>
+            <td class="text-right text-white"><a class="btn btn-primary" href="{% url 'article-list' %}">Manage</a></td>
+        </tr>
+        <tr>
+            <td>Category</td>
+            <td class="text-right text-white"><a class="btn btn-primary" href="{% url 'category-list' %}">Manage</a></td>
+        </tr>
+        <tr class="table-secondary">
+            <td>User</td>
+            <td class="text-right text-white"><a class="btn btn-primary" href="{% url 'user-list' %}">Manage</a></td>
+        </tr>
+        </tbody>
+</table>
+{% endblock %}
+

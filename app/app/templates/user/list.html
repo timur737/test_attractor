@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block navbar_title %}
+Users
+{% endblock %}
+{% block navbar_button %}
+<a class="btn btn-primary" href="{% url 'user-create' %}">Create</a>
+{% endblock %}
+
+{% block container %}
+<table class="table table-hover">
+    <tr>
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Username</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in object_list %}
+        <tr>
+            <td>{{user.id}}</td>
+            <td><a href="{% url 'user-update' pk=user.id %}">{{user.username}}</a></td>
+            <td class="text-right"><a class="btn btn-danger" href="{% url 'user-delete' pk=user.id %}">Delete</a>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+</table>
+{% endblock %}
+

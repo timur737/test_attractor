@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block navbar_title %}
+Users
+{% endblock %}
+{% block container %}
+<div class="card">
+    <div class="card-header">
+        <h5 class="card-title">Update '{{user.username}}'</h5>
+    </div>
+    <div class="card-body">
+        <form method="post">
+            {% csrf_token %}
+            {{form.as_p}}
+            <button type="submit" class="btn btn-success">Update</button>
+            <a class="btn btn-danger" href="{% url 'user-delete' pk=user.id %}">Delete</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% block navbar_title %}
+Categories
+{% endblock %}
+{% block navbar_button %}
+<a class="btn btn-primary" href="{% url 'category-create' %}">Create</a>
+{% endblock %}
+
+{% block container %}
+<table class="table table-hover">
+    <tr>
+        <thead class="thead-light">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Title</th>
+            <th scope="col">Parent</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for category in object_list %}
+        <tr>
+            <td>{{category.id}}</td>
+            <td><a href="{% url 'category-update' pk=category.id %}">{{category.title}}</a></td>
+            {% if category.parent %}
+            <td>{{category.parent}}</td>
+            {% else %}
+            <td>---------</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+
+        </tbody>
+</table>
+{% endblock %}
+
